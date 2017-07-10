@@ -1,11 +1,17 @@
 import React from 'react'
 import { instanceOf } from 'prop-types'
 
-class Counter extends React.Component {
+class LoveTime extends React.Component {
+
+  static propTypes = {
+    startDate: instanceOf(Date).isRequired
+  }
+
   state = {
     year: '-',
     month: '-',
-    day: '-',
+    week: '-',
+    date: '-',
     hour: '-',
     minute: '-',
     second: '-'
@@ -16,37 +22,33 @@ class Counter extends React.Component {
     const diff = new Date(currentTime.getTime() - this.props.startDate.getTime())
     const year = diff.getUTCFullYear() - 1970
     const month = diff.getUTCMonth()
-    const day = diff.getUTCDay()
+    const date = diff.getUTCDate()
     const hour = diff.getUTCHours()
     const minute = diff.getUTCMinutes()
     const second = diff.getUTCSeconds()
 
-    this.setState({ year, month, day, hour, minute, second })
+    this.setState({ year, month, date, hour, minute, second })
+  }
+
+  initialCounter = (tickEvery = 1000) => {
+    setInterval(()=>{
+      this.calculateTime()
+    }, tickEvery)
   }
 
   componentDidMount = () => {
-    setInterval(()=>{
-      this.calculateTime()
-    },1000)
+    this.initialCounter()
   }
 
   render () {
 
-    const { year, month, day, hour, minute, second } = this.state 
+    const { year, month, date, hour, minute, second } = this.state 
     return (
       <div>
-        {year} years : {month} month: {day} day: {hour} hour: {minute} minute: {second} second
+        {year} years : {month} month: {date} day: {hour} hour: {minute} minute: {second} second
       </div>
     )
   }
 }
 
-Counter.defaultProps = {
-  startDate: instanceOf(Date)
-}
-
-Counter.defaultProps = {
-  startDate: new Date('July 24, 2013 00:00:00')
-}
-
-export default Counter
+export default LoveTime
