@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <Container>
         <div>
-          <h2>{`HPA4Y <3 <3 <3`}</h2>
+          <h2>{`HPA4YRS`}</h2>
           <LoveTime startDate={new Date('July 24, 2013 00:00:00')}/>
         </div>
       </Container>
