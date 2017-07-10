@@ -4,11 +4,17 @@ import LoveTime from '../../components/LoveTime'
 // import './App.css';
 
 const Container = styled.div`
+  display: flex;
   height: 100vh;
   width: 100%;
   background-color: #222;
   padding: 20px;
   color: white;
+  justify-content: center;
+
+  h2 {
+    text-align: center;
+  }
 `
 
 class App extends Component {
