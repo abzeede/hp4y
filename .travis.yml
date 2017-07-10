@@ -12,6 +12,6 @@ install:
 #     secure: $FIREBASE_TOKEN.
 #   project: "aniversarry-86ecd"
 after_success:
-- firebase use --token $FIREBASE_DEPLOY_KEY production
+- firebase use --token ${FIREBASE_TOKEN} production
 - firebase use --add aniversarry-86ecd production
-- firebase deploy --token $FIREBASE_DEPLOY_KEY
+- firebase deploy --token "${FIREBASE_TOKEN}"
