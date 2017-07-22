@@ -18,6 +18,7 @@ const LoveTimeContainer = styled.div`
     justify-content: center;
     display: flex;
     flex-direction: column;
+    box-shadow: 2px 1px rgba(224, 57, 151, 0.6);
     
     .value {
       font-family: Mitr;
