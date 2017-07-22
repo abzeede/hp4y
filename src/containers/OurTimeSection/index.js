@@ -13,15 +13,29 @@ const SubTitle = styled.h3`
 	color: #7d7b7b;
 `
 
+const convertDateToThaiDate = (dateTime) => {
+  const thaiMonth = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน',
+    'กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤษจิกายน','ธันวาคม']
+  const date = dateTime.getDate()
+  const month = thaiMonth[dateTime.getUTCMonth()]
+  const year = dateTime.getFullYear() + 543
+
+  console.log(dateTime)
+  return `${date} ${month} ${year}`
+}
+
+const anniversaryDate = new Date('July 24, 2013 00:00:00')
+
 const OurTimeSection = () => {
   return (
     <SectionContainer background="#fff">
-      <Title>จาก 24 กรกฏาคม 2556 ถึง 24 กรกฏาคม 2560</Title>
+      <Title>จาก {convertDateToThaiDate(anniversaryDate)} ถึง {convertDateToThaiDate(new Date())}</Title>
       <SubTitle>
-        เราแชร์เรื่องราวของกันและกัน
+        เราแชร์เรื่องราว
         <BeatAnimation><img src="http://www.freeiconspng.com/uploads/heart-png-8.png" width={45} height={45} /></BeatAnimation>
+        ของกันและกัน
       </SubTitle>
-      <LoveTime startDate={new Date('July 24, 2013 00:00:00')} />
+      <LoveTime startDate={anniversaryDate} />
     </SectionContainer>
   )
 }
