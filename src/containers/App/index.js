@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import LoveTime from '../../components/LoveTime'
-import Heart from '../../components/Heart'
+import WelcomeSection from '../WelcomeSection'
+import OurTimeSection from '../OurTimeSection'
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100%;
+  flex-direction: column;
   background-color: #222;
-  padding: 20px;
-  color: white;
-  justify-content: center; 
+  color: white; 
 `
 
-const HeartWrapper = styled.div`
+/*const HeartWrapper = styled.div`
   display: flex;
   justify-content: center;
   animation-name: beatAnimation;
@@ -49,18 +47,15 @@ const HeartWrapper = styled.div`
       transform: scale(1.1)
     }
   }
-`
+`*/
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <div>
-          <HeartWrapper>
-            <Heart text="Live"/>
-          </HeartWrapper>
-          <LoveTime startDate={new Date('July 24, 2013 00:00:00')}/>
-        </div>
+        <WelcomeSection />
+        <OurTimeSection />
+          {/*<LoveTime startDate={new Date('July 24, 2013 00:00:00')}/>*/}
       </Container>
     );
   }

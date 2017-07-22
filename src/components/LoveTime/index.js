@@ -2,29 +2,40 @@ import React from 'react'
 import styled from 'styled-components'
 import toArray from 'lodash/toArray'
 import keys from 'lodash/keys'
+import { Grid } from 'semantic-ui-react'
 import { instanceOf } from 'prop-types'
 
 
 const LoveTimeContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  .time-container {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-  }
-
+  margin-top: 90px;
+  
   .time {
-    display: flex;
-    width: 30px;
-    height: 45px;
-    border-radius: 5px;
-    border: solid 1px #2b2a2a;
-    background: #1b1b1b;
+    width: 167px;
+    height: 167px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: solid 3px #b8b7b7;
+    border-radius: 90px;
     justify-content: center;
-    align-items: center;
-    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    
+    .value {
+      font-family: Mitr;
+      font-size: 59px;
+      font-weight: 200;
+      justify-content: center;
+      text-align: center;
+      color: #8e8e8e;
+    }
+    
+    .type {
+      font-family: Mitr;
+      font-size: 24px;
+      font-weight: 200;
+      text-align: center;
+      color: #8e8e8e;
+      margin-top: 25px;   
+    }
   }
 `
 
@@ -42,6 +53,15 @@ class LoveTime extends React.Component {
     minute: '-',
     second: '-'
   }
+
+  messages = () => ({
+    year: 'ปี',
+    month: 'เดือน',
+    day: 'วัน',
+    hour: 'ชั่วโมง',
+    minute: 'นาที',
+    second: 'วินาที'
+  })
 
   calculateTime = () => {
     const currentTime = new Date()
@@ -71,10 +91,16 @@ class LoveTime extends React.Component {
 
     return toArray(this.state).map((value, i) => {
       return (
-        <div className="time-container">
-          <span className="time">{value}</span>
-          <span>{stateKeys[i]}</span>
-        </div>
+        <Grid.Column>
+          <div className="time">
+            <div className="value">
+              {value}
+            </div>
+            <div className="type">
+              {this.messages()[stateKeys[i]]}
+            </div>
+          </div>
+        </Grid.Column>
       )
     })
   }
@@ -82,7 +108,9 @@ class LoveTime extends React.Component {
   render () {
     return (
       <LoveTimeContainer>
-        {this.generateTime()}
+        <Grid columns={6} container>
+          {this.generateTime()}
+        </Grid>
       </LoveTimeContainer>
     )
   }
