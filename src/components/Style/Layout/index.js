@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const SectionContainer = styled.div`
   width: 100%;
-  height: 560px;
+  min-height: 560px;
+  height: ${({ height = '560px' }) => `${height}`};
   position: relative;
   background-color: ${({ background }) => background};
 `

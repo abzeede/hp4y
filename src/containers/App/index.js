@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import LoveTime from '../../components/LoveTime'
+import Slider from 'react-slick'
+import { SectionContainer } from '../../components/Style/Layout'
 import WelcomeSection from '../WelcomeSection'
 import OurTimeSection from '../OurTimeSection'
+import OurStorySection from '../OurStorySection'
 
 const Container = styled.div`
   display: flex;
@@ -11,51 +13,33 @@ const Container = styled.div`
   color: white; 
 `
 
-/*const HeartWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  animation-name: beatAnimation;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-
-  @keyframes beatAnimation {
-    0% {
-      transform: scale(1)
-    }
-    5% {
-      transform: scale(1.1)
-    }
-    10% {
-      transform: scale(1)
-    }
-    15% {
-      transform: scale(1.1)
-    }
-    50% {
-      transform: scale(1)
-    }
-    55% {
-      transform: scale(1)
-    }
-    60% {
-      transform: scale(1.1)
-    }
-    65% {
-      transform: scale(1)
-    }
-    70% {
-      transform: scale(1.1)
-    }
-  }
-`*/
-
 class App extends Component {
+  settings = {
+    dots: false,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    draggable: true,
+    fade: true,
+    adaptiveHeight: true,
+  };
+
   render() {
     return (
       <Container>
         <WelcomeSection />
         <OurTimeSection />
-          {/*<LoveTime startDate={new Date('July 24, 2013 00:00:00')}/>*/}
+        <OurStorySection />
+        <SectionContainer background="#fff">
+          <Slider {...this.settings}>
+            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px"/>
+            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px"/>
+            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px"/>
+            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px"/>
+          </Slider>
+        </SectionContainer>
       </Container>
     );
   }

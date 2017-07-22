@@ -20,7 +20,6 @@ const convertDateToThaiDate = (dateTime) => {
   const month = thaiMonth[dateTime.getUTCMonth()]
   const year = dateTime.getFullYear() + 543
 
-  console.log(dateTime)
   return `${date} ${month} ${year}`
 }
 
@@ -31,9 +30,8 @@ const OurTimeSection = () => {
     <SectionContainer background="#fff">
       <Title>จาก {convertDateToThaiDate(anniversaryDate)} ถึง {convertDateToThaiDate(new Date())}</Title>
       <SubTitle>
-        เราแชร์เรื่องราว
+        เราแชร์เรื่องราวชีวิตของกันและกัน
         <BeatAnimation><img src="http://www.freeiconspng.com/uploads/heart-png-8.png" width={45} height={45} /></BeatAnimation>
-        ของกันและกัน
       </SubTitle>
       <LoveTime startDate={anniversaryDate} />
     </SectionContainer>
