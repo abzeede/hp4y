@@ -34,10 +34,10 @@ class App extends Component {
         <OurStorySection />
         <SectionContainer background="#fff">
           <Slider {...this.settings}>
-            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px"/>
-            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px"/>
-            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px"/>
-            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px"/>
+            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px" alt="" />
+            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px" alt="" />
+            <img src="http://demo.smartaddons.com/extensions/joomla17/cache/mod_sj_content_slider/2c04826e09a2d5e19101b62a6843ba68.jpeg" height="560px" alt="" />
+            <img src="http://www.pauldutu.eu/wp-content/uploads/2015/02/slider9.jpg" height="560px" alt="" />
           </Slider>
         </SectionContainer>
       </Container>

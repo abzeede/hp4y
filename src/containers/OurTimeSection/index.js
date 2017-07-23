@@ -31,7 +31,7 @@ const OurTimeSection = () => {
       <Title>จาก {convertDateToThaiDate(anniversaryDate)} ถึง {convertDateToThaiDate(new Date())}</Title>
       <SubTitle>
         เราแชร์เรื่องราวชีวิตของกันและกัน
-        <BeatAnimation><img src="http://www.freeiconspng.com/uploads/heart-png-8.png" width={45} height={45} /></BeatAnimation>
+        <BeatAnimation><img src="http://www.freeiconspng.com/uploads/heart-png-8.png" width={45} height={45} alt="" /></BeatAnimation>
       </SubTitle>
       <LoveTime startDate={anniversaryDate} />
     </SectionContainer>
